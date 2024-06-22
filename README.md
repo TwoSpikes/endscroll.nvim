@@ -8,14 +8,68 @@ Getting started
 ---------------
 ### Install
 
+<details><summary>
+Using [lazy.vim](https://github.com/folke/lazy.nvim):
+</summary>
+```lua
+{
+  "TwoSpikes/endscroll.nvim",
+}
+```
+</details>
+
+<details><summary>
 Using [vim-plug](https://github.com/junegunn/vim-plug):
+</summary>
+```vim
+Plug 'TwoSpikes/endscroll.nvim'
 ```
-Plug 'plax-00/endscroll.nvim'
+</details>
+
+<details><summary>
+Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
+</summary>
+```lua
+use 'TwoSpikes/endscroll.nvim'
 ```
-Using [packer](https://github.com/wbthomason/packer.nvim):
+</details>
+
+<details><summary>
+Using [pckr.nvim](https://github.com/lewis6991/pckr.nvim):
+</summary>
+```lua
+'TwoSpikes/endscroll.nvim'
 ```
-use 'plax-00/endscroll.nvim'
+
+<details><summary>
+Using [dein](https://github.com/Shougo/dein.vim):
+</summary>
+```vim
+call dein#add('TwoSpikes/endscroll.nvim')
 ```
+</details>
+
+<details><summary>
+Using [paq-nvim](https://github.com/savq/paq-nvim):
+```lua
+'TwoSpikes/endscroll.nvim'
+```
+
+<details><summary>
+Using [Pathogen](https://github.com/tpope/vim-pathogen):
+</summary>
+```console
+$ cd ~/.vim/bundle && git clone https://github.com/TwoSpikes/endscroll.nvim
+```
+</details>
+
+<details><summary>
+Using Vim built-in package manager (requires Vim v.8.0+) ([`:h packages`](https://vimhelp.org/repeat.txt.html#packages)):
+</summary>
+```console
+$ cd ~/.vim/pack/test/start/ && git clone https://github.com/TwoSpikes/endscroll.nvim
+```
+</details>
 
 ### Setup
 #### Quick start
