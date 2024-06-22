@@ -31,7 +31,7 @@ local function scroll()
             end
         end
 
-        if below < scrolloff and above >= scrolloff then
+        if below < scrolloff and above >= scrolloff and vim.fn.winline() > vim.fn.winheight(vim.fn.winnr()) - scrolloff - 1 then
             api.nvim_feedkeys('j' .. scroll_key, 'n', false)
             goto continue
         end
