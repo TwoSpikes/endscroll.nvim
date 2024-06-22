@@ -40,6 +40,7 @@ Using [pckr.nvim](https://github.com/lewis6991/pckr.nvim):
 ```lua
 'TwoSpikes/endscroll.nvim'
 ```
+</details>
 
 <details><summary>
 Using [dein](https://github.com/Shougo/dein.vim):
@@ -51,9 +52,11 @@ call dein#add('TwoSpikes/endscroll.nvim')
 
 <details><summary>
 Using [paq-nvim](https://github.com/savq/paq-nvim):
+</summary>
 ```lua
 'TwoSpikes/endscroll.nvim'
 ```
+</details>
 
 <details><summary>
 Using [Pathogen](https://github.com/tpope/vim-pathogen):
@@ -64,7 +67,7 @@ $ cd ~/.vim/bundle && git clone https://github.com/TwoSpikes/endscroll.nvim
 </details>
 
 <details><summary>
-Using Vim built-in package manager (requires Vim v.8.0+) ([`:h packages`](https://vimhelp.org/repeat.txt.html#packages)):
+Using Vim built-in package manager (requires Vim v.8.0+) ([help](https://vimhelp.org/repeat.txt.html#packages) or `:h packages`):
 </summary>
 ```console
 $ cd ~/.vim/pack/test/start/ && git clone https://github.com/TwoSpikes/endscroll.nvim
@@ -76,11 +79,11 @@ $ cd ~/.vim/pack/test/start/ && git clone https://github.com/TwoSpikes/endscroll
 Add the following line to your Neovim config
 
 Lua:
-```
+```lua
 require('endscroll').setup {}
 ```
 Vimscript:
-```
+```vim
 lua require('endscroll').setup {}
 ```
 #### Settings
