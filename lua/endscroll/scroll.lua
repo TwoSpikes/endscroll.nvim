@@ -6,6 +6,14 @@ local scroll_key = api.nvim_replace_termcodes('<C-e>', true, true, true)
 local function scroll()
     local count = vim.v.count
     local down_key = count == 0 and 'gj' or 'j'
+    if vim.fn.exists('g:compatible') then
+        if vim.g.compatible == "helix" or vim.g.compatible == "helix_hard" then
+            vim.fn.YesItIsV()
+            if vim.g.pseudo_visual then
+                down_key = string.char(27)..down_key
+            end
+        end
+    end
 
     -- check for disabled filetype
     if vim.tbl_contains(opts.disabled_filetypes, vim.o.filetype) then
