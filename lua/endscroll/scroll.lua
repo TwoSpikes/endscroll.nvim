@@ -8,7 +8,6 @@ local function scroll()
     local down_key = count == 0 and 'gj' or 'j'
     if vim.fn.exists('g:compatible') then
         if vim.g.compatible == "helix" or vim.g.compatible == "helix_hard" then
-            vim.fn.YesItIsV()
             if vim.g.pseudo_visual then
                 down_key = string.char(27)..down_key
             end
