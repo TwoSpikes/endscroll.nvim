@@ -1,3 +1,7 @@
+Warning
+==============
+It is a fork of [endscroll.nvim](https://github.com/plax-00/endscroll.nvim) that is only intended to use with [dotfiles](https://github.com/TwoSpikes/dotfiles). Otherwise it will not work.
+
 endscroll.nvim
 ==============
 A simple plugin to make Neovim naturally scroll through the end of files. Uses the value of `scrolloff` to continue scrolling as if there were more lines below the last line.
