@@ -1,6 +1,6 @@
 Warning
 ==============
-It is a fork of [endscroll.nvim](https://github.com/plax-00/endscroll.nvim) that is only intended to use with [dotfiles](https://github.com/TwoSpikes/dotfiles). Otherwise it will not work.
+It is a fork of [endscroll.nvim](https://github.com/plax-00/endscroll.nvim) that is only intended to use with [extra.nvim](https://github.com/TwoSpikes/extra.nvim). Otherwise it will not work. Use original endscroll.nvim otherwise
 
 endscroll.nvim
 ==============
