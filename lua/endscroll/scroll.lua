@@ -25,34 +25,42 @@ local function scroll()
     local count1 = vim.v.count1
 
 
+	if not vim.g.disable_animations then
+		for _ = 1, count1, 1 do
+			local above = api.nvim_win_text_height(0, { start_row = top_line - 1, end_row = current_line - 1}).all - 1
+			local below = current_line == last_line and 0 or api.nvim_win_text_height(0, { start_row = current_line - 1, end_row = last_line - 1}).all - 2
 
-    for _ = 1, count1, 1 do
-        local above = api.nvim_win_text_height(0, { start_row = top_line - 1, end_row = current_line - 1}).all - 1
-        local below = current_line == last_line and 0 or api.nvim_win_text_height(0, { start_row = current_line - 1, end_row = last_line - 1}).all - 2
+			if current_line == last_line then
+				if above > scrolloff and opts.scroll_at_end then
+					api.nvim_feedkeys(scroll_key, 'n', false)
+					goto continue
+				else
+					return
+				end
+			end
 
-        if current_line == last_line then
-            if above > scrolloff and opts.scroll_at_end then
-                api.nvim_feedkeys(scroll_key, 'n', false)
-                goto continue
-            else
-                return
-            end
-        end
+			if below < scrolloff and above >= scrolloff and vim.fn.winline() > vim.fn.winheight(vim.fn.winnr()) - scrolloff - 1 then
+				api.nvim_feedkeys(down_key .. scroll_key, 'n', false)
+				goto continue
+			end
 
-        if below < scrolloff and above >= scrolloff and vim.fn.winline() > vim.fn.winheight(vim.fn.winnr()) - scrolloff - 1 then
-            api.nvim_feedkeys(down_key .. scroll_key, 'n', false)
-            goto continue
-        end
+			api.nvim_feedkeys(down_key, 'n', true)
 
-        api.nvim_feedkeys(down_key, 'n', true)
+			::continue::
+			if current_line < last_line - 1 then
+				current_line = current_line + 1
+			end
+		end
+	else
+		actions = ''
+		if count1 - last_line + current_line > 0 then
+			actions = actions .. (count1 - last_line + current_line) .. scroll_key
+		end
+		actions = actions .. count1 .. down_key
+		api.nvim_feedkeys(actions, 'n', false)
+	end
 
-        ::continue::
-        if current_line < last_line - 1 then
-            current_line = current_line + 1
-        end
-    end
-
-    vim.fn.STCUpd()
+--     vim.fn.STCUpd()
 end
 
 
